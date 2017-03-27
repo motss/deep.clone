@@ -1,0 +1,55 @@
+{
+  "name": "deep-clone",
+  "version": "0.0.0",
+  "description": "Simple module to deeply clone any objects with nested objects",
+  "keywords": [
+    "array",
+    "clone",
+    "deep",
+    "deep-clone",
+    "motss",
+    "number",
+    "object",
+    "string"
+  ],
+  "homepage": "https://github.com/motss/deep-clone",
+  "license": "MIT",
+  "author": "motss <wes.ngrongsen@gmail.com>",
+  "main": "dist/index.js",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:motss/deep-clone.git"
+  },
+  "scripts": {
+    "build": "sh ./run-build.sh",
+    "build:clean": "sh ./run-build.sh clean",
+    "build:test": "rm -rf dist && babel src/ -d dist/",
+    "check": "npm run nsp && npm run snyk",
+    "lint": "eslint ./src",
+    "nsp": "nsp check",
+    "prepublish": "npm run lint && npm run check",
+    "test": "nyc ava"
+  },
+  "dependencies": {
+    "lodash.clonedeep": "^4.5.0"
+  },
+  "devDependencies": {
+    "ava": "^0.18.2",
+    "babel-cli": "^6.14.0",
+    "babel-plugin-minify-empty-function": "0.0.1",
+    "babel-plugin-transform-remove-console": "^6.8.0",
+    "babel-plugin-transform-remove-debugger": "^6.8.0",
+    "babel-polyfill": "^6.16.0",
+    "babel-preset-babili": "0.0.9",
+    "babel-preset-env": "^1.1.8",
+    "eslint": "^3.8.0",
+    "eslint-config-google": "^0.7.1",
+    "nsp": "^2.6.2",
+    "nyc": "^10.1.2",
+    "snyk": "^1.25.2"
+  },
+  "engines": {
+    "node": ">= 6.9.1",
+    "npm": ">= 3.10.8"
+  }
+}
