@@ -1,4 +1,6 @@
 # deep-clone
+
+[![Greenkeeper badge](https://badges.greenkeeper.io/motss/deep-clone.svg)](https://greenkeeper.io/)
 A custom package to output greetings.
 
 ## How to use
