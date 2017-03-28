@@ -19,14 +19,18 @@ $ npm install --save deep.clone
 
 ## Usage
 
-Brief example to show how to use:
+Deeply clone an object with nested objects with JS's primitives. This package aims to deeply clone simple nested target with JS's primitives which makes it much more performant and the caveat is that Function, RegExp, etc are not clonable. In order to deep clone for those complex types, the `absolute` flag msut be specified.
 
 ```js
 const deepClone = require('deep.clone');
 
-const a = { a: { b: { c: [ 1, 2,3 ] }, e: [ { f: null } ] }, d: 'deep' };
+const a = { a: { b: { c: [1, 2,3] }, e: [ { f: null } ] }, d: 'deep' };
 
-const b = deepClone(a);
+const deepCloneA = deepClone(a);
+
+const withComplexTypes = { a: () => {}, b: /test/gi, c: [1, 2], d: new Date(), e: { f: 111 } };
+
+const deepCloneWithAbsolute = deepClone(withComplexTypes, { absolute: true });
 ```
 
 ## License
