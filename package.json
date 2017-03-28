@@ -1,30 +1,35 @@
 {
-  "name": "deep-clone",
+  "name": "deep.clone",
   "version": "0.0.0",
-  "description": "Simple module to deeply clone any objects with nested objects",
+  "description": "Simple package to deeply clone any objects with nested objects",
   "keywords": [
     "array",
     "clone",
+    "clone-deep",
+    "clone.deep",
     "deep",
     "deep-clone",
+    "deep.clone",
     "motss",
     "number",
     "object",
     "string"
   ],
-  "homepage": "https://github.com/motss/deep-clone",
+  "homepage": "https://github.com/motss/deep.clone",
   "license": "MIT",
   "author": "motss <wes.ngrongsen@gmail.com>",
   "main": "dist/index.js",
   "repository": {
     "type": "git",
-    "url": "git@github.com:motss/deep-clone.git"
+    "url": "git@github.com:motss/deep.clone.git"
   },
   "scripts": {
     "build": "sh ./run-build.sh",
     "build:clean": "sh ./run-build.sh clean",
     "build:test": "rm -rf dist && babel src/ -d dist/",
     "check": "npm run nsp && npm run snyk",
+    "codecov": "nyc report --reporter=lcov > coverage.lcov && codecov",
+    "coveralls": "nyc report --reporter=text-lcov | coveralls",
     "lint": "eslint ./src",
     "nsp": "nsp check",
     "prepublish": "npm run lint && npm run check",
@@ -42,6 +47,8 @@
     "babel-polyfill": "^6.16.0",
     "babel-preset-babili": "0.0.9",
     "babel-preset-env": "^1.1.8",
+    "codecov": "^2.1.0",
+    "coveralls": "^2.12.0",
     "eslint": "^3.8.0",
     "eslint-config-google": "^0.7.1",
     "nsp": "^2.6.2",
@@ -51,5 +58,15 @@
   "engines": {
     "node": ">= 6.9.1",
     "npm": ">= 3.10.8"
+  },
+  "nyc": {
+    "exclude": [
+      "src/!(index.js)",
+      "test",
+      "test{,-*}.js",
+      "**/*.test.js",
+      "**/__tests__/**",
+      "**/node_modules/**"
+    ]
   }
 }
