@@ -1,3 +1,5 @@
+const isRequired = require('./is-required');
+
 /**
  * Constructor for the DeepClone object.
  * Deeply clone an object with nested objects with JS's primitives.
@@ -20,15 +22,13 @@ class DeepClone {
    * Deep clone an object with nested objects.
    *
    * @static
-   * @param {string} target - Cloning target.
-   * @param {any} options - Flag to deep clone all complex types.
+   * @param {string} target=DeepClone.isRequired('target') - Cloning target.
+   * @param {any} [options] - Flag to deep clone all complex types.
    * @returns {any} Deeply clone object.
    *
    * @memberOf DeepClone
    */
-  static init (target = (() => {
-    throw new TypeError('target can NOT be undefined');
-  })(), options) {
+  static init (target = isRequired('target'), options) {
     if (options && {}.hasOwnProperty.call(options, 'absolute')) {
       const lodashCloneDeep = require('lodash.clonedeep');
 
