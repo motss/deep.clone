@@ -2,6 +2,8 @@
 
 > Simple package to deeply clone any objects with nested objects.
 
+[![NPM][nodei-image]][nodei-url]
+
 [![NPM version][npm-image]][npm-url]
 [![Build Status][travis-image]][travis-url]
 [![Build status][appveyor-image]][appveyor-url]
@@ -41,6 +43,8 @@ const deepCloneWithAbsolute = deepClone(withComplexTypes, { absolute: true });
 [MIT License](http://motss.mit-license.org/) © Rong Sen Ng
 
 
+[nodei-image]: https://nodei.co/npm/deep.clone.png?downloads=true&downloadRank=true&stars=true
+[nodei-url]: https://nodei.co/npm/deep.clone/
 [npm-image]: https://badge.fury.io/js/deep.clone.svg
 [npm-url]: https://npmjs.org/package/deep.clone
 [travis-image]: https://travis-ci.org/motss/deep.clone.svg?branch=master
