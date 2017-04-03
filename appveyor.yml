@@ -1,7 +1,15 @@
+environment:
+  CODECOV_TOKEN:
+    secure: 5SygvlgfTewBB3CTmBxUfQ==
+  SNYK_TOKEN:
+    secure: IyV3vkSZTlBKOtJfcNFk3ZyRSwSRKZUg4YUulfphVR8FCMj94J7az6yIoqNALOPq
+  matrix:
+    - nodejs_version: 6
+    - nodejs_version: 7
+
 platform:
   - x86
   - x64
-  - ARM
 
 install:
   - ps: Install-Product node $env:nodejs_version $env:platform
