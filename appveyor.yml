@@ -1,12 +1,12 @@
-install:
-  - ps: Install-Product node $env:nodejs_version x64
-  - npm install -g npm
-  - npm install
-
 platform:
   - x86
   - x64
   - ARM
+
+install:
+  - ps: Install-Product node $env:nodejs_version $env:platform
+  - npm install -g npm
+  - npm install
 
 test_script:
   - node --version

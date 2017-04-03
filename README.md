@@ -4,6 +4,7 @@
 
 [![NPM version][npm-image]][npm-url]
 [![Build Status][travis-image]][travis-url]
+[![Build status][appveyor-image]][appveyor-url]
 [![Dependency Status][daviddm-image]][daviddm-url]
 [![Coverage percentage][coveralls-image]][coveralls-url]
 [![codecov][codecov-image]][codecov-url]
@@ -44,6 +45,8 @@ const deepCloneWithAbsolute = deepClone(withComplexTypes, { absolute: true });
 [npm-url]: https://npmjs.org/package/deep.clone
 [travis-image]: https://travis-ci.org/motss/deep.clone.svg?branch=master
 [travis-url]: https://travis-ci.org/motss/deep.clone
+[appveyor-image]: https://ci.appveyor.com/api/projects/status/796r33kh1pmg8gcm/branch/master?svg=true
+[appveyor-url]: https://ci.appveyor.com/project/motss/deep-clone/branch/master
 [daviddm-image]: https://david-dm.org/motss/deep.clone.svg?theme=shields.io
 [daviddm-url]: https://david-dm.org/motss/deep.clone
 [coveralls-image]: https://coveralls.io/repos/github/motss/deep.clone/badge.svg?branch=master
