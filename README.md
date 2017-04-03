@@ -8,12 +8,14 @@
 [![Coverage percentage][coveralls-image]][coveralls-url]
 [![codecov][codecov-image]][codecov-url]
 [![Known Vulnerabilities][snyk-image]][snyk-url]
+[![NSP Status][nsp-image]][nsp-url]
+[![GitHub license][license-image]][license-url]
 
 <!--[![Greenkeeper badge][greenkeeper-image]][greenkeeper-url]-->
 
 ## Install
 
-```sh
+```
 $ npm install --save deep.clone
 ```
 
@@ -50,6 +52,10 @@ const deepCloneWithAbsolute = deepClone(withComplexTypes, { absolute: true });
 [snyk-url]: https://snyk.io/test/github/motss/deep.clone
 [codecov-image]: https://codecov.io/gh/motss/deep.clone/branch/master/graph/badge.svg
 [codecov-url]: https://codecov.io/gh/motss/deep.clone
+[license-image]: https://img.shields.io/badge/license-MIT-blue.svg
+[license-url]: https://motss.mit-license.org/
+[nsp-image]: https://nodesecurity.io/orgs/motss/projects/a1c57ec8-9c17-4912-932b-f1ff6284e2ae/badge
+[nsp-url]: https://nodesecurity.io/orgs/motss/projects/a1c57ec8-9c17-4912-932b-f1ff6284e2ae
 
 <!--[greenkeeper-image]: https://badges.greenkeeper.io/motss/deep.clone.svg-->
 <!--[greenkeeper-url]: https://greenkeeper.io/-->
