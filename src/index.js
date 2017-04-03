@@ -1,4 +1,5 @@
 const isRequired = require('./is-required');
+const lodashCloneDeep = require('lodash.clonedeep');
 
 /**
  * Constructor for the DeepClone object.
@@ -30,8 +31,6 @@ class DeepClone {
    */
   static init (target = isRequired('target'), options) {
     if (options && {}.hasOwnProperty.call(options, 'absolute')) {
-      const lodashCloneDeep = require('lodash.clonedeep');
-
       return lodashCloneDeep(target);
     }
 
