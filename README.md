@@ -1,8 +1,8 @@
 # deep.clone
 
-> Simple package to deeply clone any objects with nested objects.
-
 [![NPM][nodei-image]][nodei-url]
+
+> Simple package to deeply clone any objects with nested objects.
 
 [![NPM version][npm-image]][npm-url]
 [![Build Status][travis-image]][travis-url]
