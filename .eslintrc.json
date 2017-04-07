@@ -8,6 +8,9 @@
     "es6": true,
     "node": true
   },
+  "plugins": [
+    "security"
+  ],
   "parserOptions": {
     "sourceType": "module"
   },
