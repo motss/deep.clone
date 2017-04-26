@@ -41,7 +41,7 @@
     "lodash.clonedeep": "^4.5.0"
   },
   "devDependencies": {
-    "ava": "^0.18.2",
+    "ava": "^0.19.1",
     "babel-cli": "^6.14.0",
     "babel-plugin-minify-empty-function": "0.0.1",
     "babel-plugin-transform-remove-console": "^6.8.0",
@@ -55,7 +55,7 @@
     "eslint-config-google": "^0.7.1",
     "eslint-plugin-security": "^1.3.0",
     "nsp": "^2.6.2",
-    "nyc": "^10.1.2",
+    "nyc": "^10.2.0",
     "snyk": "^1.25.2"
   },
   "engines": {
