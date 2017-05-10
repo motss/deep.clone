@@ -14,8 +14,7 @@
 [![NSP Status][nsp-image]][nsp-url]
 [![Inline docs][inch-image]][inch-url]
 [![GitHub license][license-image]][license-url]
-
-<!--[![Greenkeeper badge][greenkeeper-image]][greenkeeper-url]-->
+[![Greenkeeper badge][greenkeeper-image]][greenkeeper-url]
 
 ## Install
 
@@ -25,7 +24,7 @@ $ npm install --save deep.clone
 
 ## Usage
 
-Deeply clone an object with nested objects with JS's primitives. This package aims to deeply clone simple nested target with JS's primitives which makes it much more performant and the caveat is that Function, RegExp, etc are not clonable. In order to deep clone for those complex types, the `absolute` flag msut be specified.
+Deeply clone an object with nested objects with JS's primitives. This package aims to deeply clone simple nested target with JS's primitives which makes it much more performant and the caveat is that Function, RegExp, etc are not clonable. In order to deeply clone those complex types, the `absolute` flag is required.
 
 ```js
 const deepClone = require('deep.clone');
@@ -38,6 +37,10 @@ const withComplexTypes = { a: () => {}, b: /test/gi, c: [1, 2], d: new Date(), e
 
 const deepCloneWithAbsolute = deepClone(withComplexTypes, { absolute: true });
 ```
+
+## Demo
+
+[Simple demo on runkit](https://runkit.com/motss/deep.clone)
 
 ## License
 
@@ -66,6 +69,5 @@ const deepCloneWithAbsolute = deepClone(withComplexTypes, { absolute: true });
 [inch-url]: http://inch-ci.org/github/motss/deep.clone
 [license-image]: https://img.shields.io/badge/license-MIT-blue.svg
 [license-url]: https://motss.mit-license.org/
-
-<!--[greenkeeper-image]: https://badges.greenkeeper.io/motss/deep.clone.svg-->
-<!--[greenkeeper-url]: https://greenkeeper.io/-->
+[greenkeeper-image]: https://badges.greenkeeper.io/motss/deep.clone.svg
+[greenkeeper-url]: https://greenkeeper.io/
