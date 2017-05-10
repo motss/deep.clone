@@ -1,5 +1,3 @@
-// @ts-check
-
 /**
  * Throw error on undefined required parameter.
  *

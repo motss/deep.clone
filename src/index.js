@@ -1,5 +1,3 @@
-// @ts-check
-
 const isRequired = require('./is-required');
 const lodashCloneDeep = require('lodash.clonedeep');
 
