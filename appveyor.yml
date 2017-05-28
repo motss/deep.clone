@@ -7,20 +7,35 @@ environment:
     - nodejs_version: 6
     - nodejs_version: 7
 
+# Fix line endings on Windows
+init:
+  - git config --global core.autocrlf true
+
+# cache
+  - node_modules -> package.json # cache node_modules, reset if package.json is modified
+
+# fastfail
+matrix
+  fast_finish: true
+
 platform:
   - x86
   - x64
 
 # Install scripts. (runs after repo cloning)
 install:
+  # Get the latest stable version of Node.js
   - ps: Install-Product node $env:nodejs_version $env:platform
-  - npm install -g npm
+  # Output useful info for debugging
+  - node --version
+  - npm --version
+  - snyk --version
+  # install modules
   - npm install
 
 # Post-install test scripts.
 test_script:
-  - node --version
-  - npm --version
+  - npm run snyk-auth-windows
   - npm test
 
 # Don't actually build.

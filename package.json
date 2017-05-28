@@ -35,6 +35,7 @@
     "nyc": "nyc report --reporter=lcov",
     "prepublish": "npm run lint && npm run check && npm run build",
     "snyk": "snyk test",
+    "snyk-auth-windows": "node cli auth $SNYK_TOKEN",
     "test": "nyc ava && npm run nyc"
   },
   "dependencies": {
