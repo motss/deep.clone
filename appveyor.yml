@@ -30,7 +30,6 @@ install:
   # Output useful info for debugging
   - node --version
   - npm --version
-  - snyk --version
   # install modules
   - npm install
 
