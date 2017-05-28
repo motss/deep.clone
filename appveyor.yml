@@ -12,6 +12,7 @@ init:
   - git config --global core.autocrlf true
 
 # cache
+cache:
   - node_modules -> package.json # cache node_modules, reset if package.json is modified
 
 # fastfail
