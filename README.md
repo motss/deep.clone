@@ -1,3 +1,4 @@
+[![Stories in Ready](https://badge.waffle.io/motss/deep.clone.png?label=ready&title=Ready)](https://waffle.io/motss/deep.clone?utm_source=badge)
 # deep.clone
 
 [![NPM][nodei-image]][nodei-url]
