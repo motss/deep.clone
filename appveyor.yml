@@ -27,6 +27,8 @@ platform:
 install:
   # Get the latest stable version of Node.js
   - ps: Install-Product node $env:nodejs_version $env:platform
+  # Install global modules
+  - npm install -g snyk npm@next
   # Output useful info for debugging
   - node --version
   - npm --version
@@ -35,7 +37,7 @@ install:
 
 # Post-install test scripts.
 test_script:
-  - npm run snyk-auth-windows
+  - snyk auth
   - npm test
 
 # Don't actually build.
