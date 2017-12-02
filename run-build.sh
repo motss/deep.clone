@@ -3,7 +3,8 @@
 clear; printf "Running %s script...\n" "$(basename "$0" .sh)"
 
 has_unused_directories=false
-directories="node_modules/"
+build_directory="dist/"
+directories="node_modules/ $build_directory"
 
 if [ ! -z "$1" ] && [ \( "$1" = "clean" \) ]; then
   for directory in $directories; do
@@ -23,18 +24,18 @@ if [ ! -z "$1" ] && [ \( "$1" = "clean" \) ]; then
 fi
 
 printf "\nBuilding project...\n"
-if [ -d "dist/" ]; then
-  rm -rf dist/
+if [ -d "$build_directory" ]; then
+  rm -rf $build_directory
 fi
 
 if [ ! -z "$2" ] && [ "$2" = "production" ]; then
   printf "\nCompiling for production use...\n"
-  BABEL_ENV=build babel  src/ -d dist/
+  BABEL_ENV=build babel  src/ -d $build_directory
 elif [ ! -z "$1" ] && [ "$1" = "production" ]; then
   printf "\nCompiling for production use...\n"
-  BABEL_ENV=build babel  src/ -d dist/
+  BABEL_ENV=build babel  src/ -d $build_directory
 else
-  BABEL_ENV=default babel src/ -d dist/
+  BABEL_ENV=default babel src/ -d $build_directory
 fi
 
 printf "\nDone.\n"

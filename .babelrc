@@ -3,22 +3,30 @@
   "env": {
     "default": {
       "presets": [
-        [ "env", { "targets": { "node": "current" } } ],
-        [ "babili", {
-          "replace": false,
-          "removeConsole": false,
-          "removeDebugger": false
-        } ]
+        ["env", {
+          "targets": { "node": "current" },
+          "useBuiltIns": true
+        }]
+      ],
+      "plugins": [
+        "transform-function-bind",
+        ["transform-object-rest-spread", { "useBuiltIns": true }]
       ]
     },
     "build": {
       "presets": [
-        [ "env", { "targets": { "node": "current" } } ],
-        [ "babili", {
+        ["env", {
+          "targets": { "node": "current" }
+        }],
+        ["minify", {
           "replace": false,
           "removeConsole": false,
           "removeDebugger": true
-        } ]
+        }]
+      ],
+      "plugins": [
+        "transform-function-bind",
+        ["transform-object-rest-spread", { "useBuiltIns": true }]
       ],
       "ignore": [
         "**/__mocks*__/*.js",
