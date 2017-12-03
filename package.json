@@ -1,6 +1,6 @@
 {
   "name": "deep.clone",
-  "version": "0.4.0",
+  "version": "0.4.1",
   "description": "Simple package to deeply clone any objects with nested objects",
   "keywords": [
     "array",
@@ -31,7 +31,8 @@
     "lint:fix": "tslint -p . -c tslint.json --fix",
     "nsp": "nsp check",
     "test": "ava dist/test",
-    "ts": "tsc gulpfile.ts"
+    "ts": "tsc gulpfile.ts",
+    "prepublishOnly": "npm run build"
   },
   "dependencies": {
     "lodash.clonedeep": "^4.5.0"
