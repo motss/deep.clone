@@ -17,20 +17,27 @@
   ],
   "homepage": "https://github.com/motss/deep.clone",
   "license": "MIT",
-  "author": "motss <wes.ngrongsen@gmail.com>",
+  "author": "Rong Sen Ng <wes.ngrongsen@gmail.com> (https://github.com/motss)",
   "main": "dist/index.js",
   "repository": {
     "type": "git",
     "url": "git@github.com:motss/deep.clone.git"
   },
   "scripts": {
+    "build": "npm run ts && cross-env NODE_ENV=production gulp build",
     "check": "npm run lint && npm run nsp",
-    "nsp": "nsp check"
+    "gulp": "gulp",
+    "lint": "tslint --project tsconfig.json --config tslint.json",
+    "lint:fix": "tslint -p . -c tslint.json --fix",
+    "nsp": "nsp check", "test": "ava dist/test",
+    "ts": "tsc gulpfile.ts"
   },
   "dependencies": {
     "lodash.clonedeep": "^4.5.0"
   },
   "devDependencies": {
+    "@std/esm": "^0.18.0",
+    "@types/node": "^8.0.53",
     "ava": "^0.24.0",
     "babel-cli": "^6.26.0",
     "babel-plugin-transform-function-bind": "^6.22.0",
@@ -38,11 +45,26 @@
     "babel-polyfill": "^6.26.0",
     "babel-preset-env": "^1.6.1",
     "babel-preset-minify": "^0.2.0",
-    "nsp": "^3.1.0"
+    "cross-env": "^5.1.1",
+    "del": "^3.0.0",
+    "gulp": "^3.9.1",
+    "gulp-babel": "^7.0.0",
+    "gulp-sequence": "^0.4.6",
+    "gulp-typescript": "^3.2.3",
+    "nsp": "^3.1.0",
+    "tslint": "^5.8.0",
+    "tslint-config-airbnb": "^5.4.2",
+    "tslint-config-prettier": "^1.6.0",
+    "typescript": "^2.6.2"
   },
   "engines": {
     "node": ">= 8.9.0",
     "npm": ">= 5.5.1"
   },
-  "private": true
+  "@std/esm": "cjs",
+  "ava": {
+    "require": [
+      "@std/esm"
+    ]
+  }
 }

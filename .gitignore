@@ -9,6 +9,7 @@ coverage/
 dist/
 dist/**/__mocks__/
 dist/**/__tests__/
+gulpfile*.js*
 logs/**/[^.]*
 node_modules/
 npm-debug.log*
