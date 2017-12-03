@@ -1,7 +1,7 @@
 <div align="center" style="text-align: center;">
   <h1 style="border-bottom: none;">deep.clone</h1>
 
-  <p>Simple and fast deep cloning with `JSON.parse` + `JSON.stringify`</p>
+  <p>Simple and fast deep cloning</p>
 </div>
 
 <hr />
@@ -14,7 +14,6 @@
 [![MIT License][mit-license-badge]][mit-license-url]
 [![NSP Status][nsp-badge]][nsp-url]
 [![Dependency Status][daviddm-badge]][daviddm-url]
-[![Greenkeeper badge][greenkeeper-badge]][greenkeeper-url]
 
 [![Code of Conduct][coc-badge]][coc-url]
 
@@ -27,7 +26,7 @@
 
 [![Stories in Ready][waffle-badge]][waffle-url]
 
-> A simple NPM package to do simple and fast deep cloning.
+> A simple NPM package to do simple and fast deep cloning with `JSON.parse` + `JSON.stringify`
 
 ## Setup
 
@@ -108,14 +107,16 @@ const complexObject = {
 
  - target <`any`> Target to be cloned.
  - options <[Object][object-mdn-url]> Set `absolute: true` for deep cloning complex objects that are not possible with `JSON.parse` + `JSON.stringify`.
+   - absolute <[boolean][boolean-mdn-url]> True if deep cloning complex objects.
  - returns: <[Promise][promise-mdn-url]<`any`>>
 
-This method deeply clones a given target with `JSON.parse` + `JSON.stringify` asynchronously.
+This method deeply clones a given target with `JSON.parse` + `JSON.stringify` asynchronously by default. Set `absolute: true` for deep cloning complex objects that contain [Date][date-mdn-url], [RegExp][regexp-mdn-url], [Function][function-mdn-url], etc.
 
 ### deepCloneSync(target[, options])
 
  - target <`any`> Target to be cloned.
  - options <[Object][object-mdn-url]> Set `absolute: true` for deep cloning complex objects that are not possible with `JSON.parse` + `JSON.stringify`.
+   - absolute <[boolean][boolean-mdn-url]> True if deep cloning complex objects.
  - returns: <[Promise][promise-mdn-url]<`any`>>
 
 This methods works the same as `deepClone(target[, options])` except that this is a synchronous version of `deepClone(target[, options])`.
@@ -126,7 +127,11 @@ This methods works the same as `deepClone(target[, options])` except that this i
 
 [node-releases-url]: https://nodejs.org/en/download/releases
 [object-mdn-url]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object
+[boolean-mdn-url]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean
 [promise-mdn-url]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise
+[date-mdn-url]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date
+[regexp-mdn-url]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/RegExp
+[function-mdn-url]: https://developer.mozilla.org/en-US/docs/Glossary/Function
 
 
 
