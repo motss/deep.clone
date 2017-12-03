@@ -1,74 +1,172 @@
-[![Stories in Ready](https://badge.waffle.io/motss/deep.clone.png?label=ready&title=Ready)](https://waffle.io/motss/deep.clone?utm_source=badge)
-# deep.clone
+<div align="center" style="text-align: center;">
+  <h1 style="border-bottom: none;">deep.clone</h1>
 
-[![NPM][nodei-image]][nodei-url]
+  <p>Simple and fast deep cloning with `JSON.parse` + `JSON.stringify`</p>
+</div>
 
-> Simple package to deeply clone any objects with nested objects.
+<hr />
 
-[![NPM version][npm-image]][npm-url]
-[![Build Status][travis-image]][travis-url]
-[![Build status][appveyor-image]][appveyor-url]
-[![Dependency Status][daviddm-image]][daviddm-url]
-[![Coverage percentage][coveralls-image]][coveralls-url]
-[![codecov][codecov-image]][codecov-url]
-[![Known Vulnerabilities][snyk-image]][snyk-url]
-[![NSP Status][nsp-image]][nsp-url]
-[![Inline docs][inch-image]][inch-url]
-[![GitHub license][license-image]][license-url]
-[![Greenkeeper badge][greenkeeper-image]][greenkeeper-url]
+[![NPM][nodei-badge]][nodei-url]
 
-## Install
+[![Build Status][travis-badge]][travis-url]
+[![Version][version-badge]][version-url]
+[![Downloads][downloads-badge]][downloads-url]
+[![MIT License][mit-license-badge]][mit-license-url]
+[![NSP Status][nsp-badge]][nsp-url]
+[![Dependency Status][daviddm-badge]][daviddm-url]
+[![Greenkeeper badge][greenkeeper-badge]][greenkeeper-url]
 
-```
+[![Code of Conduct][coc-badge]][coc-url]
+
+[![Coverage percentage][coveralls-badge]][coveralls-url]
+[![codecov][codecov-badge]][codecov-url]
+
+<!-- [![Codacy Badge][codacy-badge]][codacy-url] -->
+[![Inline docs][inch-badge]][inch-url]
+<!-- [![codebeat badge][codebeat-badge]][codebeat-url] -->
+
+[![Stories in Ready][waffle-badge]][waffle-url]
+
+> A simple NPM package to do simple and fast deep cloning.
+
+## Setup
+
+### Install the package via NPM
+
+```sh
+# NPM install
 $ npm install --save deep.clone
 ```
 
-## Usage
+## How to use
 
-Deeply clone an object with nested objects with JS's primitives. This package aims to deeply clone simple nested target with JS's primitives which makes it much more performant and the caveat is that Function, RegExp, etc are not clonable. In order to deeply clone those complex types, the `absolute` flag is required.
+### Typescript or Node.js with native ES Modules
 
-```js
-const deepClone = require('deep.clone');
+Snippet for using native ES Modules:
 
-const a = { a: { b: { c: [1, 2,3] }, e: [ { f: null } ] }, d: 'deep' };
+```ts
+/** Import project dependencies */
+import deepClone from 'deep.clone';
 
-const deepCloneA = deepClone(a);
+/** Setting up */
+const simpleObject = {
+  a: {
+    b: { c: [1, 2,3] },
+    e: [ { f: null } ],
+  },
+  d: 'deep',
+};
+const complexObject = {
+  a: () => {},
+  b: /test/gi,
+  c: [1, 2],
+  d: new Date(),
+  e: { f: 111 },
+};
 
-const withComplexTypes = { a: () => {}, b: /test/gi, c: [1, 2], d: new Date(), e: { f: 111 } };
-
-const deepCloneWithAbsolute = deepClone(withComplexTypes, { absolute: true });
+(async () => {
+  const clonedSimpleObject = await deepClone(simpleObject);
+  const clonedComplexObject = await deepClone(compleObject, {
+    absolute: true,
+  });
+})();
 ```
 
-## Demo
+### CommonJS's require
 
-[Simple demo on runkit](https://runkit.com/motss/deep.clone)
+```js
+/** Import project dependencies */
+const { deepClone } = require('deep.clone');
+
+/** Setting up */
+const simpleObject = {
+  a: {
+    b: { c: [1, 2,3] },
+    e: [ { f: null } ],
+  },
+  d: 'deep',
+};
+const complexObject = {
+  a: () => {},
+  b: /test/gi,
+  c: [1, 2],
+  d: new Date(),
+  e: { f: 111 },
+};
+
+(async () => {
+  const clonedSimpleObject = await deepClone(simpleObject);
+  const clonedComplexObject = await deepClone(compleObject, {
+    absolute: true,
+  });
+})();
+```
+
+## API Reference
+
+### deepClone(target[, options])
+
+ - target <`any`> Target to be cloned.
+ - options <[Object][object-mdn-url]> Set `absolute: true` for deep cloning complex objects that are not possible with `JSON.parse` + `JSON.stringify`.
+ - returns: <[Promise][promise-mdn-url]<`any`>>
+
+This method deeply clones a given target with `JSON.parse` + `JSON.stringify` asynchronously.
+
+### deepCloneSync(target[, options])
+
+ - target <`any`> Target to be cloned.
+ - options <[Object][object-mdn-url]> Set `absolute: true` for deep cloning complex objects that are not possible with `JSON.parse` + `JSON.stringify`.
+ - returns: <[Promise][promise-mdn-url]<`any`>>
+
+This methods works the same as `deepClone(target[, options])` except that this is a synchronous version of `deepClone(target[, options])`.
 
 ## License
 
 [MIT License](http://motss.mit-license.org/) © Rong Sen Ng
 
+[node-releases-url]: https://nodejs.org/en/download/releases
+[object-mdn-url]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object
+[promise-mdn-url]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise
 
-[nodei-image]: https://nodei.co/npm/deep.clone.png?downloads=true&downloadRank=true&stars=true
+
+
+[nodei-badge]: https://nodei.co/npm/deep.clone.png?downloads=true&downloadRank=true&stars=true
+
+[travis-badge]: https://img.shields.io/travis/motss/deep.clone.svg?style=flat-square
+
+[version-badge]: https://img.shields.io/npm/v/deep.clone.svg?style=flat-square
+[downloads-badge]: https://img.shields.io/npm/dm/deep.clone.svg?style=flat-square
+[mit-license-badge]: https://img.shields.io/github/license/mashape/apistatus.svg?style=flat-square
+[nsp-badge]: https://nodesecurity.io/orgs/motss/projects/92a9a3b3-c0c8-4172-917d-f1c7e0d5ef9f/badge
+[daviddm-badge]: https://img.shields.io/david/expressjs/express.svg?style=flat-square
+
+[coc-badge]: https://img.shields.io/badge/code%20of-conduct-ff69b4.svg?style=flat-square
+
+[coveralls-badge]: https://coveralls.io/repos/github/motss/deep.clone/badge.svg?branch=master
+[codecov-badge]: https://codecov.io/gh/motss/deep.clone/branch/master/graph/badge.svg
+
+[codacy-badge]: https://api.codacy.com/project/badge/Grade/c84a41b8422245058a8c1acd17fd7e23
+[inch-badge]: http://inch-ci.org/github/motss/deep.clone.svg?branch=master
+[codebeat-badge]: https://codebeat.co/badges/8a0eb7c1-b944-41b1-ad87-5f0bd392873b
+
+[waffle-badge]: https://badge.waffle.io/motss/deep.clone.png?label=ready&title=Ready
+
+
+
 [nodei-url]: https://nodei.co/npm/deep.clone/
-[npm-image]: https://badge.fury.io/js/deep.clone.svg
-[npm-url]: https://npmjs.org/package/deep.clone
-[travis-image]: https://travis-ci.org/motss/deep.clone.svg?branch=master
+
 [travis-url]: https://travis-ci.org/motss/deep.clone
-[appveyor-image]: https://ci.appveyor.com/api/projects/status/796r33kh1pmg8gcm/branch/master?svg=true
-[appveyor-url]: https://ci.appveyor.com/project/motss/deep-clone/branch/master
-[daviddm-image]: https://david-dm.org/motss/deep.clone.svg?theme=shields.io
-[daviddm-url]: https://david-dm.org/motss/deep.clone
-[coveralls-image]: https://coveralls.io/repos/github/motss/deep.clone/badge.svg?branch=master
-[coveralls-url]: https://coveralls.io/github/motss/deep.clone?branch=master
-[codecov-image]: https://codecov.io/gh/motss/deep.clone/branch/master/graph/badge.svg
-[codecov-url]: https://codecov.io/gh/motss/deep.clone
-[snyk-image]: https://snyk.io/test/github/motss/deep.clone/badge.svg
-[snyk-url]: https://snyk.io/test/github/motss/deep.clone
-[nsp-image]: https://nodesecurity.io/orgs/motss/projects/a1c57ec8-9c17-4912-932b-f1ff6284e2ae/badge
+[version-url]: https://npmjs.org/package/deep.clone
+[downloads-url]: http://www.npmtrends.com/deep.clone
+[mit-license-url]: https://github.com/motss/deep.clone/blob/master/LICENSE
 [nsp-url]: https://nodesecurity.io/orgs/motss/projects/a1c57ec8-9c17-4912-932b-f1ff6284e2ae
-[inch-image]: http://inch-ci.org/github/motss/deep.clone.svg?branch=master
+[daviddm-url]: https://david-dm.org/motss/deep.clone
+
+[coc-url]: https://github.com/motss/deep.clone/blob/master/CODE_OF_CONDUCT.md
+
+[coveralls-url]: https://coveralls.io/github/motss/deep.clone?branch=master
+[codecov-url]: https://codecov.io/gh/motss/deep.clone
+
 [inch-url]: http://inch-ci.org/github/motss/deep.clone
-[license-image]: https://img.shields.io/badge/license-MIT-blue.svg
-[license-url]: https://motss.mit-license.org/
-[greenkeeper-image]: https://badges.greenkeeper.io/motss/deep.clone.svg
-[greenkeeper-url]: https://greenkeeper.io/
+
+[waffle-url]: https://waffle.io/motss/deep.clone?utm_source=badge

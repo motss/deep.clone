@@ -29,7 +29,8 @@
     "gulp": "gulp",
     "lint": "tslint --project tsconfig.json --config tslint.json",
     "lint:fix": "tslint -p . -c tslint.json --fix",
-    "nsp": "nsp check", "test": "ava dist/test",
+    "nsp": "nsp check",
+    "test": "ava dist/test",
     "ts": "tsc gulpfile.ts"
   },
   "dependencies": {

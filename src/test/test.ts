@@ -14,6 +14,7 @@ const towno = {
           f: 'random-string',
           g: () => {},
           re: /haha/gi,
+          createdAt: new Date(),
         }
       }
     },
