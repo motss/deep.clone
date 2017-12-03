@@ -17,8 +17,8 @@
 
 [![Code of Conduct][coc-badge]][coc-url]
 
-[![Coverage percentage][coveralls-badge]][coveralls-url]
-[![codecov][codecov-badge]][codecov-url]
+<!-- [![Coverage percentage][coveralls-badge]][coveralls-url] -->
+<!-- [![codecov][codecov-badge]][codecov-url] -->
 
 <!-- [![Codacy Badge][codacy-badge]][codacy-url] -->
 [![Inline docs][inch-badge]][inch-url]
@@ -169,8 +169,8 @@ This methods works the same as `deepClone(target[, options])` except that this i
 
 [coc-url]: https://github.com/motss/deep.clone/blob/master/CODE_OF_CONDUCT.md
 
-[coveralls-url]: https://coveralls.io/github/motss/deep.clone?branch=master
-[codecov-url]: https://codecov.io/gh/motss/deep.clone
+<!-- [coveralls-url]: https://coveralls.io/github/motss/deep.clone?branch=master
+[codecov-url]: https://codecov.io/gh/motss/deep.clone -->
 
 [inch-url]: http://inch-ci.org/github/motss/deep.clone
 
