@@ -28,6 +28,11 @@
 
 > A simple NPM package to do simple and fast deep cloning with `JSON.parse` + `JSON.stringify`
 
+## Pre-requisite
+
+- [Node.js][node-js-url] >= 8.9.0
+- [NPM][npm-url] >= 5.5.1 ([NPM][npm-url] comes [Node.js][node-js-url] so there is no need to install separately.)
+
 ## Setup
 
 ### Install the package via NPM
@@ -125,6 +130,8 @@ This methods works the same as `deepClone(target[, options])` except that this i
 
 [MIT License](http://motss.mit-license.org/) © Rong Sen Ng
 
+[node-js-url]: https://nodejs.org
+[npm-url]: https://www.npmjs.com
 [node-releases-url]: https://nodejs.org/en/download/releases
 [object-mdn-url]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object
 [boolean-mdn-url]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean
