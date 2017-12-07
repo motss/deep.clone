@@ -30,9 +30,9 @@
     "lint": "tslint --project tsconfig.json --config tslint.json",
     "lint:fix": "tslint -p . -c tslint.json --fix",
     "nsp": "nsp check",
-    "test": "ava dist/test",
-    "ts": "tsc gulpfile.ts",
-    "prepublishOnly": "npm run build"
+    "prepublishOnly": "npm run check && npm run build",
+    "test": "ava test/",
+    "ts": "tsc gulpfile.ts"
   },
   "dependencies": {
     "lodash.clonedeep": "^4.5.0"

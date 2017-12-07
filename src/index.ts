@@ -12,11 +12,7 @@ export function deepCloneSync(target: any, options?: DeepCloneOptions) {
     throw new TypeError('target is undefined');
   }
 
-  if (
-    typeof options !== 'undefined'
-      && {}.hasOwnProperty.call(options, 'absolute')
-      && options.absolute === true
-  ) {
+  if (typeof (options || {}).absolute === 'boolean' && options.absolute) {
     return lodashCloneDeep(target);
   }
 
