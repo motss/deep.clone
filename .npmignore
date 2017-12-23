@@ -1,20 +1,20 @@
 # dot files
+.build/
 .DS_Store
 .esm-cache
-*.env
-.build/
 .nyc_output
 .tmp/
 .vscode
+*.env
 
 # debug
 npm-debug.log*
 yarn-error.log*
 
 # folders
-dist*/
+./test*/
+demo*/
 node_modules/
-test*/
 
 # .js files
 gulpfile*.js
