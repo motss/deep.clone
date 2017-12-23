@@ -128,7 +128,7 @@ This methods works the same as `deepClone(target[, options])` except that this i
 
 ## License
 
-[MIT License](http://motss.mit-license.org/) © Rong Sen Ng
+[MIT License](https://motss.mit-license.org/) © Rong Sen Ng
 
 [node-js-url]: https://nodejs.org
 [npm-url]: https://www.npmjs.com
