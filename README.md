@@ -26,7 +26,20 @@
 
 [![Stories in Ready][waffle-badge]][waffle-url]
 
-> A simple NPM package to do simple and fast deep cloning with `JSON.parse` + `JSON.stringify`
+> A simple NPM package to do simple and fast deep cloning with `JSON.parse` + `JSON.stringify`.
+
+## Table of contents
+
+- [Pre-requisite](#pre-requisite)
+- [Setup](#setup)
+  - [Install](#install)
+  - [Usage](#usage)
+    - [Node.js](#nodejs)
+    - [Native ES Modules or Typescript](#native-es-modules-or-typescript)
+- [API Reference](#api-reference)
+  - [deepClone(target[, options])](#deepclonetarget-options)
+  - [deepCloneSync(target[, options])](#deepclonesynctarget-options)
+- [License](#license)
 
 ## Pre-requisite
 
@@ -35,22 +48,20 @@
 
 ## Setup
 
-### Install the package via NPM
+### Install
 
 ```sh
-# NPM install
+# Install via NPM
 $ npm install --save deep.clone
 ```
 
-## How to use
+### Usage
 
-### Typescript or Node.js with native ES Modules
+#### Node.js
 
-Snippet for using native ES Modules:
-
-```ts
+```js
 /** Import project dependencies */
-import deepClone from 'deep.clone';
+const { deepClone } = require('deep.clone');
 
 /** Setting up */
 const simpleObject = {
@@ -76,11 +87,11 @@ const complexObject = {
 })();
 ```
 
-### CommonJS's require
+#### Native ES Modules or Typescript
 
-```js
+```ts
 /** Import project dependencies */
-const { deepClone } = require('deep.clone');
+import deepClone from 'deep.clone';
 
 /** Setting up */
 const simpleObject = {
@@ -113,7 +124,7 @@ const complexObject = {
  - target <`any`> Target to be cloned.
  - options <[Object][object-mdn-url]> Set `absolute: true` for deep cloning complex objects that are not possible with `JSON.parse` + `JSON.stringify`.
    - absolute <[boolean][boolean-mdn-url]> True if deep cloning complex objects.
- - returns: <[Promise][promise-mdn-url]<`any`>>
+ - returns: <[Promise][promise-mdn-url]<`any`>> Promise which resolves with the deeply cloned target.
 
 This method deeply clones a given target with `JSON.parse` + `JSON.stringify` asynchronously by default. Set `absolute: true` for deep cloning complex objects that contain [Date][date-mdn-url], [RegExp][regexp-mdn-url], [Function][function-mdn-url], etc.
 
@@ -122,9 +133,9 @@ This method deeply clones a given target with `JSON.parse` + `JSON.stringify` as
  - target <`any`> Target to be cloned.
  - options <[Object][object-mdn-url]> Set `absolute: true` for deep cloning complex objects that are not possible with `JSON.parse` + `JSON.stringify`.
    - absolute <[boolean][boolean-mdn-url]> True if deep cloning complex objects.
- - returns: <[Promise][promise-mdn-url]<`any`>>
+ - returns: <[Promise][promise-mdn-url]<`any`>> Promise which resolves with the deeply cloned target.
 
-This methods works the same as `deepClone(target[, options])` except that this is a synchronous version of `deepClone(target[, options])`.
+This methods works the same as `deepClone(target[, options])` except that this is the synchronous version.
 
 ## License
 

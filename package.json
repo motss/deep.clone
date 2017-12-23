@@ -32,7 +32,7 @@
     "nsp": "nsp check",
     "prepublishOnly": "npm run check && npm run build",
     "test": "ava test/",
-    "ts": "tsc gulpfile.ts"
+    "ts": "tsc --target esnext --lib esnext --module commonjs gulpfile.ts"
   },
   "dependencies": {
     "lodash.clonedeep": "^4.5.0"
