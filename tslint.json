@@ -1,10 +1,7 @@
+
 {
   "extends": [
-    "tslint-config-airbnb",
-    "tslint-config-prettier"
+    "@messageflow/tslint-config"
   ],
-  "rules": {
-    "import-name": false,
-    "strict-boolean-expressions": false
-  }
+  "rules": {}
 }

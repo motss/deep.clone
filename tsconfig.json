@@ -1,35 +1,42 @@
 {
   "compilerOptions": {
-    "allowUnusedLabels": true,
     "allowSyntheticDefaultImports": true,
     "allowUnreachableCode": false,
-    "forceConsistentCasingInFileNames": true,
-    "removeComments": true,
-    "traceResolution": false,
-    "newLine": "LF",
+    "allowUnusedLabels": false,
+    "esModuleInterop": true,
     "experimentalDecorators": true,
-    "lib": [
-      "esnext",
-      "esnext.asynciterable"
-    ],
-    "moduleResolution": "node",
-    "module": "commonjs",
-    "target": "esnext",
+    "forceConsistentCasingInFileNames": true,
+    "newLine": "LF",
+    "noImplicitReturns": true,
     "noUnusedLocals": true,
     "noUnusedParameters": true,
-    "jsx": "react",
-    "jsxFactory": "h",
-    "rootDir": ".",
-    "outDir": ".",
+    "removeComments": true,
+    "resolveJsonModule": true,
+    "strictBindCallApply": true,
+    "strictNullChecks": true,
+    "traceResolution": false,
+
+    "lib": [
+      "esnext",
+      "esnext.array",
+      "esnext.asynciterable",
+      "esnext.intl",
+      "esnext.symbol"
+    ],
+    "moduleResolution": "node",
+    "module": "esnext",
+    "target": "esnext",
+    "rootDir": "src",
+    "outDir": "dist",
     "declaration": true,
-    "declarationDir": "."
+    "declarationDir": "dist",
+    "types": [
+      "jest"
+    ]
   },
   "include": [
-    "src/**/*",
-    "types/*.d.ts"
-  ],
-  "exclude": [
-    "node_modules",
-    "src/demo"
+    "src/*",
+    "src/test/**/*",
+    "src/demo/**/*"
   ]
 }
