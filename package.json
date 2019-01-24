@@ -29,8 +29,10 @@
   "module": "dist/index.js",
   "typings": "dist/index.d.ts",
   "scripts": {
+    "build": "rm -rf dist/ && npm run rollup",
     "jest": "jest --config ./.jestrc.json",
-    "lint": "tslint --project tsconfig.prod.json --config tslint.prod.json --format stylish 'src/**/*.ts*'",
+    "lint": "tslint --project tsconfig.json --config tslint.prod.json --format stylish 'src/**/*.ts*'",
+    "rollup": "rollup -c ./rollup.config.js",
     "test": "npm run lint && npm run ts && npm run jest",
     "ts": "tsc -p ./tsconfig.test.json"
   },
@@ -43,10 +45,11 @@
     "@types/node": "^10.12.18",
     "jest": "^23.6.0",
     "rollup": "^1.1.2",
+    "rollup-plugin-commonjs": "^9.2.0",
     "rollup-plugin-filesize": "^6.0.1",
     "rollup-plugin-terser": "^4.0.2",
     "rollup-plugin-tslint": "^0.2.2",
-    "rollup-plugin-typescript": "^1.0.0",
+    "rollup-plugin-typescript2": "^0.19.2",
     "tslint": "^5.12.1",
     "typescript": "^3.2.4"
   },
