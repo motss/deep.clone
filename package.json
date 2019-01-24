@@ -30,7 +30,8 @@
   "typings": "dist/index.d.ts",
   "scripts": {
     "jest": "jest --config ./.jestrc.json",
-    "test": "npm run ts && npm run jest",
+    "lint": "tslint --project tsconfig.prod.json --config tslint.prod.json --format stylish 'src/**/*.ts*'",
+    "test": "npm run lint && npm run ts && npm run jest",
     "ts": "tsc -p ./tsconfig.test.json"
   },
   "dependencies": {
