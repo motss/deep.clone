@@ -178,7 +178,7 @@ const complexObject = {
 
 ### deno
 
-See [deno][]
+See [deno][deno-url].
 
 
 ## API Reference
@@ -208,6 +208,7 @@ This methods works the same as `deepClone(target[, options])` except that this i
 [unpkg-url]: https://unpkg.com
 [jsdelivr-url]: https://www.jsdelivr.com
 [unpkg-url]: https://unpkg.com/deep.clone@latest/dist/
+[deno-url]: https://github.com/motss/deep.clone/blob/deno/README.md
 
 <!-- MDN -->
 [map-mdn-url]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Map
