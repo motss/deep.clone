@@ -104,12 +104,12 @@ This methods works the same as `deepClone(target)` except that this is the synch
 
 [jsdelivr-badge]: https://data.jsdelivr.com/v1/package/npm/deep.clone/badge
 
-[travis-badge]: https://flat.badgen.net/travis/motss/deep.clone/master
+[travis-badge]: https://flat.badgen.net/travis/motss/deep.clone/deno
 
 <!-- Links -->
 [version-url]: https://www.npmjs.com/package/deep.clone
 [deno-version-url]: https://github.com/denoland/deno
-[mit-license-url]: https://github.com/motss/deep.clone/blob/master/LICENSE
+[mit-license-url]: https://github.com/motss/deep.clone/blob/deno/LICENSE
 
 [jsdelivr-url]: https://www.jsdelivr.com/package/npm/deep.clone?version=1.0.0-deno
 
