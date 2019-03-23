@@ -11,10 +11,10 @@
     }
   },
   "collectCoverageFrom": [
-    "!**/node_modules/**",
-    "!**/src/demo/**/*.{js|jsx}",
-    "!**/src/test*/**/*.{js|jsx}",
-    "**/dist/**/*.{js|jsx}"
+    "!<rootDir>/node_modules/**",
+    "!<rootDir>/src/demo/**/*.(js|jsx)",
+    "!<rootDir>/src/test*/**/*.(js|jsx)",
+    "<rootDir>/dist/**/*.(js|jsx)"
   ],
   "verbose": true,
   "bail": true,
@@ -22,10 +22,11 @@
     "<rootDir>/dist/"
   ],
   "testMatch": [
-    "**/dist/test*/**/*.spec.(js|jsx)"
+    "<rootDir>/dist/test*/**/*.spec.(js|jsx)"
   ],
   "moduleFileExtensions": [
     "js",
+    "jsx",
     "json"
   ]
 }
