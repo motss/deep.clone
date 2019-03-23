@@ -6,17 +6,17 @@
 
 <hr />
 
+[![Follow me][follow-me-badge]][follow-me-url]
+
 [![Version][version-badge]][version-url]
 [![Node version][node-version-badge]][node-version-url]
 [![MIT License][mit-license-badge]][mit-license-url]
 
-[![jsDelivr downloads][jsdelivr-badge]][jsdelivr-url]
 [![Downloads][downloads-badge]][downloads-url]
 [![Total downloads][total-downloads-badge]][downloads-url]
 [![Packagephobia][packagephobia-badge]][packagephobia-url]
 [![Bundlephobia][bundlephobia-badge]][bundlephobia-url]
 
-[![Build Status][travis-badge]][travis-url]
 [![CircleCI][circleci-badge]][circleci-url]
 [![Dependency Status][daviddm-badge]][daviddm-url]
 [![codecov][codecov-badge]][codecov-url]
@@ -28,9 +28,7 @@
 
 > A simple NPM package to do simple and fast deep cloning with `JSON.parse` + `JSON.stringify`.
 
-## Table of contents
-
-<!-- TOC -->
+## Table of contents <!-- omit in toc -->
 
 - [Pre-requisite](#pre-requisite)
 - [How to use](#how-to-use)
@@ -39,13 +37,10 @@
     - [Installation](#installation)
     - [Node.js](#nodejs)
     - [Native ES Modules or Typescript](#native-es-modules-or-typescript)
-  - [deno](#deno)
 - [API Reference](#api-reference)
   - [deepClone(target[, options])](#deepclonetarget-options)
   - [deepCloneSync(target[, options])](#deepclonesynctarget-options)
 - [License](#license)
-
-<!-- /TOC -->
 
 ## Pre-requisite
 
@@ -176,9 +171,9 @@ const complexObject = {
 })();
 ```
 
-### deno
+<!-- ### deno -->
 
-See [deno][deno-url].
+<!-- See [deno][deno-url]. -->
 
 
 ## API Reference
@@ -220,20 +215,20 @@ This methods works the same as `deepClone(target[, options])` except that this i
 [promise-mdn-url]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise
 
 <!-- Badges -->
-[version-badge]: https://flat.badgen.net/npm/v/deep.clone
+[follow-me-badge]: https://flat.badgen.net/twitter/follow/igarshmyb?icon=twitter
+
+[version-badge]: https://flat.badgen.net/npm/v/deep.clone?icon=npm
 [node-version-badge]: https://flat.badgen.net/npm/node/deep.clone
 [mit-license-badge]: https://flat.badgen.net/npm/license/deep.clone
 
-[jsdelivr-badge]: https://data.jsdelivr.com/v1/package/npm/deep.clone/badge
 [downloads-badge]: https://flat.badgen.net/npm/dm/deep.clone
 [total-downloads-badge]: https://flat.badgen.net/npm/dt/deep.clone?label=total%20downloads
 [packagephobia-badge]: https://flat.badgen.net/packagephobia/install/deep.clone
 [bundlephobia-badge]:  https://flat.badgen.net/packagephobia/install/deep.clone
 
-[travis-badge]: https://flat.badgen.net/travis/motss/deep.clone/master
-[circleci-badge]: https://flat.badgen.net/circleci/github/motss/deep.clone/master
+[circleci-badge]: https://flat.badgen.net/circleci/github/motss/deep.clone/master?icon=circleci
 [daviddm-badge]: https://flat.badgen.net/david/dep/motss/deep.clone
-[codecov-badge]: https://flat.badgen.net/codecov/c/github/motss/deep.clone?label=codecov
+[codecov-badge]: https://flat.badgen.net/codecov/c/github/motss/deep.clone?label=codecov&icon=codecov
 [coveralls-badge]: https://flat.badgen.net/coveralls/c/github/motss/deep.clone?label=coveralls
 
 [codacy-badge]: https://api.codacy.com/project/badge/Grade/c84a41b8422245058a8c1acd17fd7e23
@@ -241,16 +236,16 @@ This methods works the same as `deepClone(target[, options])` except that this i
 [coc-badge]: https://flat.badgen.net/badge/code%20of/conduct/pink
 
 <!-- Links -->
+[follow-me-url]: https://twitter.com/igarshmyb?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=motss/deep.clone
+
 [version-url]: https://www.npmjs.com/package/deep.clone
 [node-version-url]: https://nodejs.org/en/download
 [mit-license-url]: https://github.com/motss/deep.clone/blob/master/LICENSE
 
-[jsdelivr-url]: https://www.jsdelivr.com/package/npm/deep.clone
 [downloads-url]: http://www.npmtrends.com/deep.clone
 [packagephobia-url]: https://packagephobia.now.sh/result?p=deep.clone
 [bundlephobia-url]: https://bundlephobia.com/result?p=deep.clone
 
-[travis-url]: https://travis-ci.org/motss/deep.clone
 [circleci-url]: https://circleci.com/gh/motss/deep.clone/tree/master
 [daviddm-url]: https://david-dm.org/motss/deep.clone
 [codecov-url]: https://codecov.io/gh/motss/deep.clone
