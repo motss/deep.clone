@@ -5,7 +5,7 @@
 version: 2.1
 
 defaults: &defaults
-  working_directory: ~/normalize-diacritics
+  working_directory: ~/deep.clone
   docker:
     - image: circleci/python:2-node
 
