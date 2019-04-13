@@ -36,4 +36,4 @@ workflows:
   version: 2
   deno-test:
     jobs:
-- test
+      - test
