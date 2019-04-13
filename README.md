@@ -31,12 +31,13 @@
 ## Table of contents <!-- omit in toc -->
 
 - [Pre-requisite](#pre-requisite)
-- [How to use](#how-to-use)
-  - [Multiple bundles](#multiple-bundles)
-  - [NPM](#npm)
-    - [Installation](#installation)
-    - [Node.js](#nodejs)
-    - [Native ES Modules or Typescript](#native-es-modules-or-typescript)
+- [Install](#install)
+- [Usage](#usage)
+  - [TypeScript or ES Modules](#typescript-or-es-modules)
+  - [Node.js](#nodejs)
+  - [Browser](#browser)
+    - [ES Modules](#es-modules)
+    - [IIFE](#iife)
   - [deno](#deno)
 - [API Reference](#api-reference)
   - [deepClone&lt;T&gt;(target[, options])](#deepclonelttgttarget-options)
@@ -48,71 +49,46 @@
 - [Node.js][node-js-url] >= 8.9.0
 - [NPM][npm-url] >= 5.5.1 ([NPM][npm-url] comes with [Node.js][node-js-url] so there is no need to install separately.)
 
-## How to use
-
-### Multiple bundles
-
-There are 3 different bundles for different use cases:
-
-1. `esm` - Targeting native ES modules such as ES2015+ and [TypeScript][typescript-url].
-
-    ```ts
-    import { deepClone } from 'deep.clone';
-    /** import { deepCloneSync } from 'deep.clone'; */
-    ...
-    ```
-
-2. `cjs` - Targeting [Node.js][node-js-url] with `CommonJS`.
-
-    ```ts
-    const { deepClone } = require('deep.clone/dist/index.cjs.js');
-    /** const { deepCloneSync } = require('deep.clone/dist/index.cjs.js'); */
-    ...
-    ```
-
-3. `iife` - Targeting older browsers by compiling to `IIFE` and `ES5`.
-
-    ```html
-    <!--
-      Say, you are using IIFE bundle on browsers such as IE11 by loading it via `unpkg` or `jsDelivr`.
-    -->
-    ...
-    <head>
-      <script src="https://unpkg.com/deep.clone@latest/dist/index.iife.js"></script>
-      <!-- <script src="https://cdn.jsdelivr.net/npm/deep.clone@latest/dist/index.iife.min.js"></script> -->
-    </head>
-    ...
-    <script>
-      const { deepClone } = window.DeepClone;
-      /** const { deepCloneSync } = window.DeepClone; */
-    </script>
-    ...
-    ```
-
-You can already grab the bundle from such as the follwoing awesome CDNs:
-
-1. [unpkg][unpkg-url]
-
-    - `esm` https://unpkg.com/deep.clone@latest/dist/index.js
-    - `cjs` https://unpkg.com/deep.clone@latest/dist/index.cjs.js
-    - `iife` https://unpkg.com/deep.clone@latest/dist/index.iife.js
-
-2. [jsdelivr][jsdelivr-url]
-
-    - `esm` https://cdn.jsdelivr.net/npm/deep.clone@latest/dist/index.js
-    - `cjs` https://cdn.jsdelivr.net/npm/deep.clone@latest/dist/index.cjs.js
-    - `iife` https://cdn.jsdelivr.net/npm/deep.clone@latest/dist/index.iife.js
-
-### NPM
-
-#### Installation
+## Install
 
 ```sh
 # Install via NPM
 $ npm install --save deep.clone
 ```
 
-#### Node.js
+## Usage
+
+### TypeScript or ES Modules
+
+```ts
+/** Import project dependencies */
+import deepClone from 'deep.clone';
+
+/** Setting up */
+const simpleObject = {
+  a: {
+    b: { c: [1, 2,3] },
+    e: [ { f: null } ],
+  },
+  d: 'deep',
+};
+const complexObject = {
+  a: () => {},
+  b: /test/gi,
+  c: [1, 2],
+  d: new Date(),
+  e: { f: 111 },
+};
+
+(async () => {
+  const clonedSimpleObject = await deepClone(simpleObject);
+  const clonedComplexObject = await deepClone(compleObject, {
+    absolute: true,
+  });
+})();
+```
+
+### Node.js
 
 ```js
 /** Import project dependencies */
@@ -142,34 +118,31 @@ const complexObject = {
 })();
 ```
 
-#### Native ES Modules or Typescript
+### Browser
 
-```ts
-/** Import project dependencies */
-import deepClone from 'deep.clone';
+#### ES Modules
 
-/** Setting up */
-const simpleObject = {
-  a: {
-    b: { c: [1, 2,3] },
-    e: [ { f: null } ],
-  },
-  d: 'deep',
-};
-const complexObject = {
-  a: () => {},
-  b: /test/gi,
-  c: [1, 2],
-  d: new Date(),
-  e: { f: 111 },
-};
+```html
+<script type="module">
+  import { deepClone } from 'https://unpkg.com/deep.clone@latest/dist/deep.clone.js';
 
-(async () => {
-  const clonedSimpleObject = await deepClone(simpleObject);
-  const clonedComplexObject = await deepClone(compleObject, {
-    absolute: true,
-  });
-})();
+  deepClone({ ... }) /** Object truncated for brevity */
+    .then(console.log);
+    .then(console.error);
+</script>
+```
+
+#### IIFE
+
+```html
+<script src="https://unpkg.com/deep.clone@latest/dist/deep.clone.iife.js"></script>
+<script>
+  const { deepClone } = window.DeepClone;
+
+  deepClone({ ... }) /** Object truncated for brevity */
+    .then(console.log);
+    .then(console.error);
+</script>
 ```
 
 ### deno
