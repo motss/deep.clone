@@ -118,7 +118,7 @@ describe('deep.clone', () => {
 
     test('is truly deep clone an nested Object', async () => {
       try {
-        const dc = await deepClone(owno);
+        const dc = await deepClone<any>(owno);
 
         dc.a.b.c = {};
         dc.e = {};
@@ -141,7 +141,7 @@ describe('deep.clone', () => {
 
     test('is deeply clone an nested Array', async () => {
       try {
-        const dc = await deepClone(awno);
+        const dc = await deepClone<any>(awno);
 
         dc[0][0][0].a = {};
 
@@ -219,7 +219,7 @@ describe('deep.clone', () => {
         const shallowArr = [
           null, 1, 2, { a: 1 }, 'shallow-string',
         ];
-        const dc = await deepClone(shallowArr);
+        const dc = await deepClone<any>(shallowArr);
 
         dc[3] = {};
 
@@ -274,7 +274,7 @@ describe('deep.clone', () => {
 
     test(`deep cloning with 'absolute: true' before mutating cloned object`, async () => {
       try {
-        const dc = await deepClone(towno, { absolute: true });
+        const dc = await deepClone<any>(towno, { absolute: true });
 
         dc.a.b = {};
 
