@@ -31,7 +31,7 @@
 
 ```ts
 /** Import from GH via `denopkg` */
-import { deepClone } from "https://denopkg.com/motss/deep-clone@v0.0.1-deno/mod.ts";
+import { deepClone } from "https://denopkg.com/motss/deep-clone@v1.0.0-deno/mod.ts";
 
 (async () => {
   const simpleObject = {
@@ -92,7 +92,7 @@ This methods works the same as `deepClone(target[, options])` except that this i
 
 <!-- Badges -->
 
-[version-badge]: https://flat.badgen.net/badge/branch/v0.0.1-deno/blue?icon=github
+[version-badge]: https://flat.badgen.net/badge/version/v1.0.0-deno/blue?icon=github
 [deno-version-badge]: https://flat.badgen.net/github/release/denoland/deno/stable?icon=github
 [mit-license-badge]: https://flat.badgen.net/npm/license/deep.clone
 [circleci-badge]: https://flat.badgen.net/circleci/github/motss/deep.clone/deno?icon=circleci
