@@ -154,7 +154,7 @@ See [deno module][deno-module-url].
 
 ### deepClone&lt;T&gt;(target[, options])
 
- - `target` <`any`> Target to be cloned.
+ - `target` <`T`> Target to be cloned.
  - `options` <?[Object][object-mdn-url]> Optionally set `absolute: true` for deep cloning complex objects that are not possible with `JSON.parse` + `JSON.stringify`.
    - `absolute` <[boolean][boolean-mdn-url]> If true, deep clone complex objects.
  - returns: <[Promise][promise-mdn-url]<`T`>> Promise which resolves with the deeply cloned target.

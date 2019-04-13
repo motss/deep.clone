@@ -116,7 +116,7 @@ describe('deep.clone', () => {
       }
     });
 
-    test('is truly deep clone an nested Object', async () => {
+    test('truly deep clone an nested Object', async () => {
       try {
         const dc = await deepClone<any>(owno);
 
@@ -139,18 +139,6 @@ describe('deep.clone', () => {
       }
     });
 
-    test('is deeply clone an nested Array', async () => {
-      try {
-        const dc = await deepClone<any>(awno);
-
-        dc[0][0][0].a = {};
-
-        expect(dc).not.toStrictEqual(awno);
-      } catch (e) {
-        throw e;
-      }
-    });
-
     test('deeply clone a non-nested Object', async () => {
       try {
         const shallowObj = {
@@ -167,7 +155,7 @@ describe('deep.clone', () => {
       }
     });
 
-    test('is turly deep clone a non-nested Object', async () => {
+    test('truly deep clone a non-nested Object', async () => {
       try {
         const shallowObj = {
           a: 'shallow-string',
@@ -214,7 +202,7 @@ describe('deep.clone', () => {
       }
     });
 
-    test('is truly deep clone a non-nested Array', async () => {
+    test('truly deep clone a non-nested Array', async () => {
       try {
         const shallowArr = [
           null, 1, 2, { a: 1 }, 'shallow-string',
