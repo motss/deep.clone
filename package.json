@@ -1,6 +1,6 @@
 {
   "name": "deep.clone",
-  "version": "2.0.1",
+  "version": "2.0.2",
   "description": "Simple package to deeply clone any objects with nested objects",
   "keywords": [
     "clone",
