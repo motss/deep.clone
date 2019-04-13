@@ -37,8 +37,9 @@
     - [Installation](#installation)
     - [Node.js](#nodejs)
     - [Native ES Modules or Typescript](#native-es-modules-or-typescript)
+  - [deno](#deno)
 - [API Reference](#api-reference)
-  - [deepClone(target[, options])](#deepclonetarget-options)
+  - [deepClone&lt;T&gt;(target[, options])](#deepclonelttgttarget-options)
   - [deepCloneSync(target[, options])](#deepclonesynctarget-options)
 - [License](#license)
 
@@ -171,19 +172,19 @@ const complexObject = {
 })();
 ```
 
-<!-- ### deno -->
+### deno
 
-<!-- See [deno][deno-url]. -->
+See [deno module][deno-module-url].
 
 
 ## API Reference
 
-### deepClone(target[, options])
+### deepClone&lt;T&gt;(target[, options])
 
  - `target` <`any`> Target to be cloned.
  - `options` <?[Object][object-mdn-url]> Optionally set `absolute: true` for deep cloning complex objects that are not possible with `JSON.parse` + `JSON.stringify`.
    - `absolute` <[boolean][boolean-mdn-url]> If true, deep clone complex objects.
- - returns: <[Promise][promise-mdn-url]<`any`>> Promise which resolves with the deeply cloned target.
+ - returns: <[Promise][promise-mdn-url]<`T`>> Promise which resolves with the deeply cloned target.
 
 This method deeply clones a given target with `JSON.parse` + `JSON.stringify` asynchronously by default. Set `absolute: true` for deep cloning complex objects that contain [Date][date-mdn-url], [RegExp][regexp-mdn-url], [Function][function-mdn-url], etc.
 
@@ -203,16 +204,19 @@ This methods works the same as `deepClone(target[, options])` except that this i
 [unpkg-url]: https://unpkg.com
 [jsdelivr-url]: https://www.jsdelivr.com
 [unpkg-url]: https://unpkg.com/deep.clone@latest/dist/
-[deno-url]: https://github.com/motss/deep.clone/blob/deno/README.md
+[deno-module-url]: https://github.com/motss/deep.clone/tree/deno
 
 <!-- MDN -->
-[map-mdn-url]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Map
-[string-mdn-url]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String
-[object-mdn-url]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object
-[number-mdn-url]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number
 [boolean-mdn-url]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean
+[date-mdn-url]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date
+[function-mdn-url]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function
 [html-style-element-mdn-url]: https://developer.mozilla.org/en-US/docs/Web/API/HTMLStyleElement
+[map-mdn-url]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Map
+[number-mdn-url]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number
+[object-mdn-url]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object
 [promise-mdn-url]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise
+[regexp-mdn-url]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/RegExp
+[string-mdn-url]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String
 
 <!-- Badges -->
 [follow-me-badge]: https://flat.badgen.net/twitter/follow/igarshmyb?icon=twitter

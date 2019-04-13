@@ -1,7 +1,7 @@
 // @ts-check
 
 import { terser } from 'rollup-plugin-terser';
-import commonjs from 'rollup-plugin-commonjs';
+import nodeResolve from 'rollup-plugin-node-resolve';
 import filesize from 'rollup-plugin-filesize';
 import tslint from 'rollup-plugin-tslint';
 import typescript from 'rollup-plugin-typescript2';
@@ -9,17 +9,14 @@ import typescript from 'rollup-plugin-typescript2';
 const isProd = !process.env.ROLLUP_WATCH;
 const input = ['src/index.ts'];
 const pluginFn = (isIife = false) => [
+  nodeResolve(),
   isProd && tslint({
     throwError: true,
     configuration: `tslint${isProd ? '.prod' : ''}.json`,
   }),
-  typescript({ tsconfig: `./tsconfig${isIife ? '.iife' : ''}.json` }),
-  commonjs({
-    include: [
-      'node_modules/lodash/**',
-      'node_modules/lodash.clonedeep/**',
-    ],
-    extensions: ['.js', '.ts'],
+  typescript({
+    tsconfig: `./tsconfig${isIife ? '.iife' : ''}.json`,
+    exclude: isProd ? ['src/(demo|test)/**/*'] : [],
   }),
   isProd && terser(),
   isProd && filesize({ showBrotliSize: true }),
@@ -27,18 +24,30 @@ const pluginFn = (isIife = false) => [
 
 const multiBuild = [
   {
-    file: 'dist/index.js',
+    file: 'dist/index.mjs',
     format: 'esm',
+    sourcemap: true,
+    exports: 'named',
   },
   {
-    file: 'dist/index.cjs.js',
+    file: 'dist/index.js',
     format: 'cjs',
+    sourcemap: true,
+    exports: 'named',
   },
   {
-    file: 'dist/index.iife.js',
-    format: 'iife',
-    name: 'DeepClone',
+    file: 'dist/deep.clone.js',
+    format: 'esm',
+    sourcemap: true,
+    // exports: 'named',
   },
-].map(n => ({ input, output: n, plugins: pluginFn(n.format === 'iife') }));
+  {
+    file: 'dist/deep.clone.iife.js',
+    name: 'DeepClone',
+    format: 'iife',
+    sourcemap: true,
+    exports: 'named',
+  },
+].map(n => ({ input, output: n, plugins: pluginFn('iife' === n.format) }));
 
 export default multiBuild;

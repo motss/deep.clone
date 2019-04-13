@@ -2,24 +2,24 @@ export interface DeepCloneOptions {
   absolute?: boolean;
 }
 
-import lodashCloneDeep from 'lodash.clonedeep';
+import clonedeep from 'lodash-es/cloneDeep.js';
 
-export function deepCloneSync(
-  target: any,
+export function deepCloneSync<T>(
+  target: T,
   options?: DeepCloneOptions
 ) {
   if (target == null) throw new TypeError(`'target' is not defined`);
 
   return options && options.absolute
-    ? lodashCloneDeep(target)
-    : JSON.parse(JSON.stringify(target));
+    ? clonedeep<T>(target)
+    : JSON.parse(JSON.stringify(target)) as T;
 }
 
-export async function deepClone(
-  target: any,
+export async function deepClone<T>(
+  target: T,
   options?: DeepCloneOptions
 ) {
-  return deepCloneSync(target, options);
+  return deepCloneSync<T>(target, options);
 }
 
 export default deepClone;

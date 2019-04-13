@@ -1,20 +1,17 @@
 {
   "compilerOptions": {
     "allowSyntheticDefaultImports": true,
-    "allowUnreachableCode": false,
-    "allowUnusedLabels": false,
     "esModuleInterop": true,
     "experimentalDecorators": true,
-    "forceConsistentCasingInFileNames": true,
     "newLine": "LF",
+    "noFallthroughCasesInSwitch": true,
     "noImplicitReturns": true,
     "noUnusedLocals": true,
     "noUnusedParameters": true,
-    "removeComments": true,
-    "resolveJsonModule": true,
-    "strictBindCallApply": true,
-    "strictNullChecks": true,
-    "traceResolution": false,
+    "resolveJsonModule": false,
+    "strict": true,
+    "sourceMap": true,
+    "inlineSources": true,
 
     "lib": [
       "esnext",
@@ -30,11 +27,11 @@
     "outDir": "dist",
     "declaration": true,
     "declarationDir": "dist",
-    "types": ["jest"]
+    "types": ["jest", "lodash-es"]
   },
   "include": ["src/*"],
   "exclude": [
-    "node_modules",
+    // "node_modules",
     "src/test/**/*",
     "src/demo/**/*"
   ]
