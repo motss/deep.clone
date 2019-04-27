@@ -31,14 +31,14 @@
   "module": "dist/index.mjs",
   "typings": "dist/index.d.ts",
   "scripts": {
-    "build": "npm run clean && npm run rollup",
-    "build:test": "npm run clean && tsc -p ./tsconfig.test.json",
+    "build": "npm run clean && cross-env NODE_ENV=production npm run rollup",
+    "build:test": "npm run lint && npm run ts -- -p tsconfig.test.json && cross-env NODE_ENV=test npm run rollup",
     "clean": "rm -rf dist/",
     "lint": "tslint --project tsconfig.json --config tslint.prod.json --format stylish",
     "lint:debug": "tslint --project tsconfig.json --config tslint.json --format stylish",
     "prepublishOnly": "npm run lint && npm run build",
     "rollup": "rollup -c ./rollup.config.js",
-    "test": "npm run lint && npm run build:test && jest --config ./.jestrc.json",
+    "test": "npm run build:test && jest --config ./.jestrc.json",
     "ts": "npm run clean && tsc",
     "watch": "npm run ts -- --watch"
   },

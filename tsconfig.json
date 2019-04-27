@@ -3,17 +3,22 @@
     "allowSyntheticDefaultImports": true,
     "esModuleInterop": true,
     "experimentalDecorators": true,
+    "forceConsistentCasingInFileNames": true,
+    "inlineSources": true,
+    "listEmittedFiles": true,
     "newLine": "LF",
     "noFallthroughCasesInSwitch": true,
     "noImplicitReturns": true,
     "noUnusedLocals": true,
     "noUnusedParameters": true,
-    "resolveJsonModule": false,
-    "strict": true,
+    "removeComments": true,
+    "resolveJsonModule": true,
     "sourceMap": true,
-    "inlineSources": true,
+    "strict": true,
 
     "lib": [
+      "dom",
+      "dom.iterable",
       "esnext",
       "esnext.array",
       "esnext.asynciterable",
@@ -26,13 +31,9 @@
     "rootDir": "src",
     "outDir": "dist",
     "declaration": true,
-    "declarationDir": "dist",
-    "types": ["jest", "lodash-es"]
+    "declarationMap": true,
+    "declarationDir": "dist"
   },
-  "include": ["src/*"],
-  "exclude": [
-    "node_modules",
-    "src/test/**/*",
-    "src/demo/**/*"
-  ]
+  "include": ["src/**/*.ts"],
+  "exclude": ["dist"]
 }

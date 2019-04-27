@@ -147,7 +147,7 @@ const complexObject = {
 
 ### deno
 
-See [deno module][deno-module-url].
+👉 Check out the [deno][] module at [deno_mod/deep_clone][].
 
 
 ## API Reference
@@ -177,7 +177,8 @@ This methods works the same as `deepClone(target[, options])` except that this i
 [unpkg-url]: https://unpkg.com
 [jsdelivr-url]: https://www.jsdelivr.com
 [unpkg-url]: https://unpkg.com/deep.clone@latest/dist/
-[deno-module-url]: https://github.com/motss/deep.clone/tree/deno
+[deno]: https://github.com/denoland/deno
+[deno_mod/deep_clone]: https://github.com/motss/deno_mod/tree/master/deep_clone
 
 <!-- MDN -->
 [boolean-mdn-url]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean
@@ -201,7 +202,7 @@ This methods works the same as `deepClone(target[, options])` except that this i
 [downloads-badge]: https://flat.badgen.net/npm/dm/deep.clone
 [total-downloads-badge]: https://flat.badgen.net/npm/dt/deep.clone?label=total%20downloads
 [packagephobia-badge]: https://flat.badgen.net/packagephobia/install/deep.clone
-[bundlephobia-badge]:  https://flat.badgen.net/packagephobia/install/deep.clone
+[bundlephobia-badge]: https://flat.badgen.net/bundlephobia/minzip/deep.clone
 
 [circleci-badge]: https://flat.badgen.net/circleci/github/motss/deep.clone/master?icon=circleci
 [daviddm-badge]: https://flat.badgen.net/david/dep/motss/deep.clone
@@ -217,7 +218,7 @@ This methods works the same as `deepClone(target[, options])` except that this i
 
 [version-url]: https://www.npmjs.com/package/deep.clone
 [node-version-url]: https://nodejs.org/en/download
-[mit-license-url]: https://github.com/motss/deep.clone/blob/master/LICENSE
+[mit-license-url]: https://github.com/motss/deep.clone/blob/master/license
 
 [downloads-url]: http://www.npmtrends.com/deep.clone
 [packagephobia-url]: https://packagephobia.now.sh/result?p=deep.clone

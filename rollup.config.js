@@ -6,10 +6,11 @@ import filesize from 'rollup-plugin-filesize';
 import tslint from 'rollup-plugin-tslint';
 import typescript from 'rollup-plugin-typescript2';
 
-const isProd = !process.env.ROLLUP_WATCH;
-const isTest = 'true' === process.env.ROLLUP_TEST;
+const NODE_ENV = process.env.NODE_ENV;
+const isProd = 'production' === NODE_ENV;
+const isTest = 'test' === NODE_ENV;
 const input = ['src/index.ts'];
-const pluginFn = (isIife = false) => [
+const pluginFn = (iife = false) => [
   nodeResolve(),
   isProd && tslint({
     throwError: true,
@@ -18,7 +19,7 @@ const pluginFn = (isIife = false) => [
   typescript({
     tsconfig: './tsconfig.json',
     exclude: isProd ? ['src/(demo|test)/**/*'] : [],
-    ...(isIife ? { tsconfigOverride: { compilerOptions: { target: 'es5' } } } : {}),
+    ...(iife ? { tsconfigOverride: { compilerOptions: { target: 'es5' } } } : {}),
   }),
   isProd && terser(),
   isProd && filesize({ showBrotliSize: true }),
@@ -51,23 +52,24 @@ const multiBuild = [
     exports: 'named',
   },
 ].map(n => ({ input, output: n, plugins: pluginFn('iife' === n.format) }));
-const testBuild = [{
-  input: 'src/index.ts',
-  output : {
-    file: 'dist/index.js',
-    format: 'cjs',
-    sourcemap: true,
-    exports: 'named',
+const testBuild = [
+  {
+    input: 'src/index.ts',
+    output: {
+      file: 'dist/index.js',
+      format: 'cjs',
+      sourcemap: true,
+      exports: 'named',
+    },
+    plugins: [
+      nodeResolve(),
+      typescript({
+        tsconfig: './tsconfig.json',
+        include: ['src/*.ts'],
+        exclude: ['src/(demo|test)/**/*.ts'],
+      }),
+    ],
   },
-  plugins: [
-    nodeResolve(),
-    typescript({
-      tsconfig: './tsconfig.json',
-      include: ['src/*.ts'],
-      exclude: ['src/(demo|test)/**/*'],
-    }),
-    terser(),
-  ],
-}];
+];
 
 export default isTest ? testBuild : multiBuild;

@@ -1,8 +1,7 @@
 {
   "extends": "./tsconfig.json",
   "compilerOptions": {
-    "module": "umd"
+    "module": "commonjs"
   },
-  "include": ["src/test/**/*.spec.ts"],
-  "exclude": []
+  "include": ["src/**/*.ts"],
 }
