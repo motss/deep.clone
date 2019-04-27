@@ -23,6 +23,7 @@
   "files": [
     "dist/*.*js.map",
     "dist/*.*js",
+    "dist/*.d.ts.map",
     "dist/*.d.ts"
   ],
   "sideEffects": false,
@@ -31,14 +32,13 @@
   "typings": "dist/index.d.ts",
   "scripts": {
     "build": "npm run clean && npm run rollup",
+    "build:test": "npm run clean && tsc -p ./tsconfig.test.json",
     "clean": "rm -rf dist/",
-    "jest": "jest --config ./.jestrc.json",
     "lint": "tslint --project tsconfig.json --config tslint.prod.json --format stylish",
     "lint:debug": "tslint --project tsconfig.json --config tslint.json --format stylish",
     "prepublishOnly": "npm run lint && npm run build",
     "rollup": "rollup -c ./rollup.config.js",
-    "rollup:test": "cross-env ROLLUP_TEST=true npm run rollup",
-    "test": "npm run lint && npm run clean && tsc -p tsconfig.test.json && npm run rollup:test && npm run jest",
+    "test": "npm run lint && npm run build:test && jest --config ./.jestrc.json",
     "ts": "npm run clean && tsc",
     "watch": "npm run ts -- --watch"
   },
@@ -46,20 +46,20 @@
     "lodash-es": "^4.17.11"
   },
   "devDependencies": {
-    "@messageflow/tslint-config": "^1.3.0",
+    "@reallyland/tslint-config": "^1.0.0",
     "@types/jest": "^24.0.11",
     "@types/lodash-es": "^4.17.3",
-    "@types/node": "^11.13.4",
+    "@types/node": "^11.13.8",
     "cross-env": "^5.2.0",
     "jest": "^24.7.1",
-    "rollup": "^1.10.0",
+    "rollup": "^1.10.1",
     "rollup-plugin-filesize": "^6.0.1",
     "rollup-plugin-node-resolve": "^4.2.3",
     "rollup-plugin-terser": "^4.0.4",
     "rollup-plugin-tslint": "^0.2.2",
-    "rollup-plugin-typescript2": "^0.20.1",
-    "tslint": "^5.15.0",
-    "typescript": "^3.4.3"
+    "rollup-plugin-typescript2": "^0.21.0",
+    "tslint": "^5.16.0",
+    "typescript": "^3.4.5"
   },
   "engines": {
     "node": ">= 8.9.0",
