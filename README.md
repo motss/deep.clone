@@ -1,3 +1,5 @@
+🚨 No longer maintained. Moved to [@reallyland/node_mod](https://github.com/reallyland/node_mod). 🚨
+
 <div align="center" style="text-align: center;">
   <h1 style="border-bottom: none;">deep.clone</h1>
 
@@ -30,19 +32,19 @@
 
 ## Table of contents <!-- omit in toc -->
 
-- [Pre-requisite](#pre-requisite)
-- [Install](#install)
-- [Usage](#usage)
-  - [TypeScript or ES Modules](#typescript-or-es-modules)
-  - [Node.js](#nodejs)
-  - [Browser](#browser)
-    - [ES Modules](#es-modules)
-    - [IIFE](#iife)
+- [Pre-requisite](#Pre-requisite)
+- [Install](#Install)
+- [Usage](#Usage)
+  - [TypeScript or ES Modules](#TypeScript-or-ES-Modules)
+  - [Node.js](#Nodejs)
+  - [Browser](#Browser)
+    - [ES Modules](#ES-Modules)
+    - [IIFE](#IIFE)
   - [deno](#deno)
-- [API Reference](#api-reference)
-  - [deepClone&lt;T&gt;(target[, options])](#deepclonelttgttarget-options)
-  - [deepCloneSync(target[, options])](#deepclonesynctarget-options)
-- [License](#license)
+- [API Reference](#API-Reference)
+  - [deepClone&lt;T&gt;(target[, options])](#deepCloneltTgttarget-options)
+  - [deepCloneSync(target[, options])](#deepCloneSynctarget-options)
+- [License](#License)
 
 ## Pre-requisite
 
